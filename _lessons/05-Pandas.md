@@ -52,15 +52,14 @@ Alguns links importantes daqui para frente:
 
 ### Digite `babypandas`!
 
-- Criada pela Universidade de California San Diego (UCSD) criamos uma versão menor e mais agradável de `pandas` chamada `babypandas`.
-- Mantém as coisas importantes e tem mensagens de erro muito melhores.
-- É mais fácil de aprender, mas ainda é um código `pandas` válido.
+- Assim, vamos limitar um pouco as funções de pandas que utilizamos
+- Você não precisa aprender pandas avançado nesse curso!
 
 ![](https://raw.githubusercontent.com/flaviovdf/fcd/master/assets/05-BabyPandas/images/babypanda.jpg)
 
-### DataFrames em `babypandas` 🐼
+### DataFrames em `pandas` 🐼
 
-- As tabelas em `babypandas` (e `pandas`) são chamadas de "DataFrames".
+- As tabelas em ``pandas` são chamadas de "DataFrames".
 - Para usar DataFrames, precisaremos importar `babypandas`. (Precisaremos de `numpy` também.)
 
 
