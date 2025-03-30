@@ -28,26 +28,11 @@ como instalar o
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/QfmSEzRXN1o" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-## Instalando o BabyPandas
-
-Neste curso iremos fazer uso do
-[BabyPandas](https://babypandas.readthedocs.io/en/latest/).
-Para instalar o mesmo basta executar o seguinte comando em
-um notebook Jupyter na sua máquina.
-
-```python
-! pip install babypandas
-```
-
-That's all! Agora você pode reiniciar o notebook e apagar o
-comando acima.
-
 ## Tutoriais Python da Microsoft
 
 Siga os tutoriais abaixo para aprender o básico do básico
 de Python. Vai ajudar você caso você tenha alguma
 dificuldade.
 
-- [Python para iniciantes](https://learn.microsoft.com/pt-br/training/paths/beginner-python/)
-- [Escrever Python básico em Notebooks](https://learn.microsoft.com/pt-br/training/modules/basic-python-nasa/)
-- [Use os fundamentos do Python para resolver mistérios e encontrar respostas](https://learn.microsoft.com/pt-br/training/paths/python-partnership/)
+- [Python para iniciantes](https://learn.microsoft.com/pt-br/shows/intro-to-python-development/)
+- [EExplorar e analisar dados com o Python](https://learn.microsoft.com/pt-br/training/modules/explore-analyze-data-with-python/)
