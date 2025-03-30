@@ -26,7 +26,7 @@ Material Adaptado do [DSC10 (UCSD)](https://dsc10.com/)
 ```python
 #In: 
 import numpy as np
-import babypandas as bpd
+import pandas as pd
 import pandas as pd
 import matplotlib.pyplot as plt
 plt.style.use('ggplot')
@@ -57,7 +57,7 @@ Vamos rodar nosso código da aula passada novamente para calcular um intervalo d
 
 ```python
 #In: 
-population = bpd.read_csv('https://raw.githubusercontent.com/flaviovdf/fcd/master/assets/15-Bootstrapping/data/2022_salaries.csv').get(['TotalWages'])
+population = pd.read_csv('https://raw.githubusercontent.com/flaviovdf/fcd/master/assets/15-Bootstrapping/data/2022_salaries.csv').get(['TotalWages'])
 population_median = population.get('TotalWages').median()
 population_median # Can't see this in real life!
 ```
@@ -133,7 +133,7 @@ right = np.percentile(boot_medians, 97.5)
 
 ```python
 #In: 
-bpd.DataFrame().assign(BootstrapMedians=boot_medians).plot(kind='hist', density=True, bins=np.arange(63000, 88000, 1000), ec='w', figsize=(10, 5))
+pd.DataFrame().assign(BootstrapMedians=boot_medians).plot(kind='hist', density=True, bins=np.arange(63000, 88000, 1000), ec='w', figsize=(10, 5))
 plt.plot([left, right], [0, 0], color='gold', linewidth=12, label='95% confidence interval');
 plt.scatter(population_median, 0.000004, color='blue', s=100, label='population median').set_zorder(3)
 plt.legend()
@@ -226,16 +226,21 @@ show_confidence_interval_slides()
 ! wget https://raw.githubusercontent.com/flaviovdf/fcd/master/assets/16-Confianca/data/many_cis.npy
 ```
 
-    --2025-03-18 10:48:48--  https://raw.githubusercontent.com/flaviovdf/fcd/master/assets/16-Confianca/data/many_cis.npy
-    Resolving raw.githubusercontent.com (raw.githubusercontent.com)... 2606:50c0:8003::154, 2606:50c0:8000::154, 2606:50c0:8002::154, ...
-    Connecting to raw.githubusercontent.com (raw.githubusercontent.com)|2606:50c0:8003::154|:443... connected.
-    HTTP request sent, awaiting response... 200 OK
+    --2025-03-30 12:42:44--  https://raw.githubusercontent.com/flaviovdf/fcd/master/assets/16-Confianca/data/many_cis.npy
+    Loaded CA certificate '/etc/ssl/certs/ca-certificates.crt'
+    Resolving raw.githubusercontent.com (raw.githubusercontent.com)... 185.199.109.133, 185.199.108.133, 185.199.111.133, ...
+    Connecting to raw.githubusercontent.com (raw.githubusercontent.com)|185.199.109.133|:443... connected.
+
+
+    HTTP request sent, awaiting response... 
+
+    200 OK
     Length: 3328 (3.2K) [application/octet-stream]
-    Saving to: ‘many_cis.npy.1’
+    Saving to: ‘many_cis.npy.2’
     
-    many_cis.npy.1      100%[===================>]   3.25K  --.-KB/s    in 0s      
+    many_cis.npy.2        0%[                    ]       0  --.-KB/s               many_cis.npy.2      100%[===================>]   3.25K  --.-KB/s    in 0s      
     
-    2025-03-18 10:48:48 (29.4 MB/s) - ‘many_cis.npy.1’ saved [3328/3328]
+    2025-03-30 12:42:45 (23.9 MB/s) - ‘many_cis.npy.2’ saved [3328/3328]
     
 
 
@@ -387,7 +392,7 @@ Por outro lado, o IC95% _contém sim_ 95% de todos os salários medianos obtidos
 
 ```python
 #In: 
-bpd.DataFrame().assign(BootstrapMedians=boot_medians).plot(kind='hist', density=True, bins=np.arange(63000, 88000, 1000), ec='w', figsize=(10, 5))
+pd.DataFrame().assign(BootstrapMedians=boot_medians).plot(kind='hist', density=True, bins=np.arange(63000, 88000, 1000), ec='w', figsize=(10, 5))
 plt.plot([left, right], [0, 0], color='gold', linewidth=12, label='95% confidence interval');
 plt.legend()
 plt.ylabel("Frequência");
@@ -494,7 +499,7 @@ Então, será que o máximo populacional se encontra na parte com "mais massa" d
 
 ```python
 #In: 
-bpd.DataFrame().assign(BootstrapMax=boot_maxes).plot(kind='hist', 
+pd.DataFrame().assign(BootstrapMax=boot_maxes).plot(kind='hist', 
                                                      density=True, 
                                                      bins=10,
                                                      ec='w',
@@ -573,7 +578,7 @@ As médias dessas distribuições são iguais ou diferentes? E suas medianas?
 
 ```python
 #In: 
-delays = bpd.read_csv('https://raw.githubusercontent.com/flaviovdf/fcd/master/assets/16-Confianca/data/united_summer2015.csv')
+delays = pd.read_csv('https://raw.githubusercontent.com/flaviovdf/fcd/master/assets/16-Confianca/data/united_summer2015.csv')
 delays.plot(kind='hist', y='Delay', bins=np.arange(-20.5, 210, 5), density=True, ec='w', figsize=(10, 5))
 plt.title('Atrasos de Vôos')
 plt.xlabel('Atrasos (em minutos)')

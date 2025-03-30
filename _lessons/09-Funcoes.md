@@ -23,7 +23,7 @@ Material Adaptado do [DSC10 (UCSD)](https://dsc10.com/)
 
 ```python
 #In: 
-import babypandas as bpd
+import pandas as pd
 import matplotlib.pyplot as plt
 import numpy as np
 plt.style.use('ggplot')
@@ -592,7 +592,7 @@ VICTOR'
 
 ```python
 #In: 
-df = bpd.DataFrame().assign(
+df = pd.DataFrame().assign(
     nome=nomes.split()
 )
 df = df.sample(df.shape[0])
@@ -625,52 +625,167 @@ df
   </thead>
   <tbody>
     <tr>
-      <th>18</th>
-      <td>GUILHERME</td>
+      <th>13</th>
+      <td>FRANCISCO</td>
     </tr>
     <tr>
-      <th>23</th>
-      <td>JOAO</td>
+      <th>14</th>
+      <td>GABRIEL</td>
     </tr>
     <tr>
       <th>37</th>
       <td>SOPHIA</td>
     </tr>
     <tr>
-      <th>7</th>
-      <td>EDUARDO</td>
+      <th>35</th>
+      <td>RAIZA</td>
     </tr>
     <tr>
-      <th>2</th>
-      <td>ARTHUR</td>
-    </tr>
-    <tr>
-      <th>...</th>
-      <td>...</td>
-    </tr>
-    <tr>
-      <th>13</th>
-      <td>FRANCISCO</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>CAROLINA</td>
+      <th>31</th>
+      <td>MARCO</td>
     </tr>
     <tr>
       <th>28</th>
       <td>LORRANY</td>
     </tr>
     <tr>
+      <th>5</th>
+      <td>CLARA</td>
+    </tr>
+    <tr>
+      <th>22</th>
+      <td>JOAO</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>CAROLINA</td>
+    </tr>
+    <tr>
+      <th>29</th>
+      <td>LUCAS</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>GAEL</td>
+    </tr>
+    <tr>
       <th>27</th>
       <td>LIVIA</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>CAIO</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>FELIPE</td>
+    </tr>
+    <tr>
+      <th>24</th>
+      <td>KARINA</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>ARTHUR</td>
+    </tr>
+    <tr>
+      <th>39</th>
+      <td>VICTOR</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>EDUARDO</td>
+    </tr>
+    <tr>
+      <th>21</th>
+      <td>ISAAC</td>
+    </tr>
+    <tr>
+      <th>38</th>
+      <td>THAYRELAN</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>GUSTAVO</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>DANIELLE</td>
+    </tr>
+    <tr>
+      <th>0</th>
+      <td>ANNY</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>GUILHERME</td>
     </tr>
     <tr>
       <th>30</th>
       <td>LUIS</td>
     </tr>
+    <tr>
+      <th>33</th>
+      <td>MATEUS</td>
+    </tr>
+    <tr>
+      <th>34</th>
+      <td>MATHEUS</td>
+    </tr>
+    <tr>
+      <th>36</th>
+      <td>RENATO</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>GABRIELLY</td>
+    </tr>
+    <tr>
+      <th>23</th>
+      <td>JOAO</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>EMANUEL</td>
+    </tr>
+    <tr>
+      <th>25</th>
+      <td>LETICIA</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>EDUARDO</td>
+    </tr>
+    <tr>
+      <th>32</th>
+      <td>MATEUS</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>ARTHUR</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>ENZO</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>GABRIEL</td>
+    </tr>
+    <tr>
+      <th>26</th>
+      <td>LETICIA</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>GUILHERME</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>FELIPE</td>
+    </tr>
   </tbody>
 </table>
-<p>40 rows × 1 columns</p>
 </div>
 
 
@@ -716,7 +831,7 @@ primeira_letra(df.get('nome').iloc[0])
 
 
 
-    'G'
+    'F'
 
 
 
@@ -729,7 +844,7 @@ primeira_letra(df.get('nome').iloc[1])
 
 
 
-    'J'
+    'G'
 
 
 
@@ -760,18 +875,47 @@ df.get('nome').apply(primeira_letra)
 
 
 
-    18    G
-    23    J
-    37    S
-    7     E
-    2     A
-         ..
     13    F
-    4     C
+    14    G
+    37    S
+    35    R
+    31    M
     28    L
+    5     C
+    22    J
+    4     C
+    29    L
+    17    G
     27    L
+    3     C
+    12    F
+    24    K
+    1     A
+    39    V
+    7     E
+    21    I
+    38    T
+    20    G
+    6     D
+    0     A
+    18    G
     30    L
-    Name: nome, Length: 40, dtype: object
+    33    M
+    34    M
+    36    R
+    16    G
+    23    J
+    9     E
+    25    L
+    8     E
+    32    M
+    2     A
+    10    E
+    15    G
+    26    L
+    19    G
+    11    F
+    Name: nome, dtype: object
 
 
 
@@ -813,8 +957,148 @@ df
   </thead>
   <tbody>
     <tr>
+      <th>13</th>
+      <td>FRANCISCO</td>
+      <td>F</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>GABRIEL</td>
+      <td>G</td>
+    </tr>
+    <tr>
+      <th>37</th>
+      <td>SOPHIA</td>
+      <td>S</td>
+    </tr>
+    <tr>
+      <th>35</th>
+      <td>RAIZA</td>
+      <td>R</td>
+    </tr>
+    <tr>
+      <th>31</th>
+      <td>MARCO</td>
+      <td>M</td>
+    </tr>
+    <tr>
+      <th>28</th>
+      <td>LORRANY</td>
+      <td>L</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>CLARA</td>
+      <td>C</td>
+    </tr>
+    <tr>
+      <th>22</th>
+      <td>JOAO</td>
+      <td>J</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>CAROLINA</td>
+      <td>C</td>
+    </tr>
+    <tr>
+      <th>29</th>
+      <td>LUCAS</td>
+      <td>L</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>GAEL</td>
+      <td>G</td>
+    </tr>
+    <tr>
+      <th>27</th>
+      <td>LIVIA</td>
+      <td>L</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>CAIO</td>
+      <td>C</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>FELIPE</td>
+      <td>F</td>
+    </tr>
+    <tr>
+      <th>24</th>
+      <td>KARINA</td>
+      <td>K</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>ARTHUR</td>
+      <td>A</td>
+    </tr>
+    <tr>
+      <th>39</th>
+      <td>VICTOR</td>
+      <td>V</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>EDUARDO</td>
+      <td>E</td>
+    </tr>
+    <tr>
+      <th>21</th>
+      <td>ISAAC</td>
+      <td>I</td>
+    </tr>
+    <tr>
+      <th>38</th>
+      <td>THAYRELAN</td>
+      <td>T</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>GUSTAVO</td>
+      <td>G</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>DANIELLE</td>
+      <td>D</td>
+    </tr>
+    <tr>
+      <th>0</th>
+      <td>ANNY</td>
+      <td>A</td>
+    </tr>
+    <tr>
       <th>18</th>
       <td>GUILHERME</td>
+      <td>G</td>
+    </tr>
+    <tr>
+      <th>30</th>
+      <td>LUIS</td>
+      <td>L</td>
+    </tr>
+    <tr>
+      <th>33</th>
+      <td>MATEUS</td>
+      <td>M</td>
+    </tr>
+    <tr>
+      <th>34</th>
+      <td>MATHEUS</td>
+      <td>M</td>
+    </tr>
+    <tr>
+      <th>36</th>
+      <td>RENATO</td>
+      <td>R</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>GABRIELLY</td>
       <td>G</td>
     </tr>
     <tr>
@@ -823,14 +1107,24 @@ df
       <td>J</td>
     </tr>
     <tr>
-      <th>37</th>
-      <td>SOPHIA</td>
-      <td>S</td>
+      <th>9</th>
+      <td>EMANUEL</td>
+      <td>E</td>
     </tr>
     <tr>
-      <th>7</th>
+      <th>25</th>
+      <td>LETICIA</td>
+      <td>L</td>
+    </tr>
+    <tr>
+      <th>8</th>
       <td>EDUARDO</td>
       <td>E</td>
+    </tr>
+    <tr>
+      <th>32</th>
+      <td>MATEUS</td>
+      <td>M</td>
     </tr>
     <tr>
       <th>2</th>
@@ -838,38 +1132,32 @@ df
       <td>A</td>
     </tr>
     <tr>
-      <th>...</th>
-      <td>...</td>
-      <td>...</td>
+      <th>10</th>
+      <td>ENZO</td>
+      <td>E</td>
     </tr>
     <tr>
-      <th>13</th>
-      <td>FRANCISCO</td>
+      <th>15</th>
+      <td>GABRIEL</td>
+      <td>G</td>
+    </tr>
+    <tr>
+      <th>26</th>
+      <td>LETICIA</td>
+      <td>L</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>GUILHERME</td>
+      <td>G</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>FELIPE</td>
       <td>F</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>CAROLINA</td>
-      <td>C</td>
-    </tr>
-    <tr>
-      <th>28</th>
-      <td>LORRANY</td>
-      <td>L</td>
-    </tr>
-    <tr>
-      <th>27</th>
-      <td>LIVIA</td>
-      <td>L</td>
-    </tr>
-    <tr>
-      <th>30</th>
-      <td>LUIS</td>
-      <td>L</td>
     </tr>
   </tbody>
 </table>
-<p>40 rows × 2 columns</p>
 </div>
 
 
@@ -893,14 +1181,18 @@ letra_count
     L    6
     E    4
     M    4
+    C    3
+    F    3
     A    3
-        ..
+    J    2
+    R    2
     I    1
+    D    1
     K    1
     S    1
     T    1
     V    1
-    Length: 15, dtype: int64
+    dtype: int64
 
 
 
@@ -973,8 +1265,148 @@ df
   </thead>
   <tbody>
     <tr>
+      <th>13</th>
+      <td>FRANCISCO</td>
+      <td>F</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>GABRIEL</td>
+      <td>G</td>
+    </tr>
+    <tr>
+      <th>37</th>
+      <td>SOPHIA</td>
+      <td>S</td>
+    </tr>
+    <tr>
+      <th>35</th>
+      <td>RAIZA</td>
+      <td>R</td>
+    </tr>
+    <tr>
+      <th>31</th>
+      <td>MARCO</td>
+      <td>M</td>
+    </tr>
+    <tr>
+      <th>28</th>
+      <td>LORRANY</td>
+      <td>L</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>CLARA</td>
+      <td>C</td>
+    </tr>
+    <tr>
+      <th>22</th>
+      <td>JOAO</td>
+      <td>J</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>CAROLINA</td>
+      <td>C</td>
+    </tr>
+    <tr>
+      <th>29</th>
+      <td>LUCAS</td>
+      <td>L</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>GAEL</td>
+      <td>G</td>
+    </tr>
+    <tr>
+      <th>27</th>
+      <td>LIVIA</td>
+      <td>L</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>CAIO</td>
+      <td>C</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>FELIPE</td>
+      <td>F</td>
+    </tr>
+    <tr>
+      <th>24</th>
+      <td>KARINA</td>
+      <td>K</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>ARTHUR</td>
+      <td>A</td>
+    </tr>
+    <tr>
+      <th>39</th>
+      <td>VICTOR</td>
+      <td>V</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>EDUARDO</td>
+      <td>E</td>
+    </tr>
+    <tr>
+      <th>21</th>
+      <td>ISAAC</td>
+      <td>I</td>
+    </tr>
+    <tr>
+      <th>38</th>
+      <td>THAYRELAN</td>
+      <td>T</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>GUSTAVO</td>
+      <td>G</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>DANIELLE</td>
+      <td>D</td>
+    </tr>
+    <tr>
+      <th>0</th>
+      <td>ANNY</td>
+      <td>A</td>
+    </tr>
+    <tr>
       <th>18</th>
       <td>GUILHERME</td>
+      <td>G</td>
+    </tr>
+    <tr>
+      <th>30</th>
+      <td>LUIS</td>
+      <td>L</td>
+    </tr>
+    <tr>
+      <th>33</th>
+      <td>MATEUS</td>
+      <td>M</td>
+    </tr>
+    <tr>
+      <th>34</th>
+      <td>MATHEUS</td>
+      <td>M</td>
+    </tr>
+    <tr>
+      <th>36</th>
+      <td>RENATO</td>
+      <td>R</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>GABRIELLY</td>
       <td>G</td>
     </tr>
     <tr>
@@ -983,14 +1415,24 @@ df
       <td>J</td>
     </tr>
     <tr>
-      <th>37</th>
-      <td>SOPHIA</td>
-      <td>S</td>
+      <th>9</th>
+      <td>EMANUEL</td>
+      <td>E</td>
     </tr>
     <tr>
-      <th>7</th>
+      <th>25</th>
+      <td>LETICIA</td>
+      <td>L</td>
+    </tr>
+    <tr>
+      <th>8</th>
       <td>EDUARDO</td>
       <td>E</td>
+    </tr>
+    <tr>
+      <th>32</th>
+      <td>MATEUS</td>
+      <td>M</td>
     </tr>
     <tr>
       <th>2</th>
@@ -998,38 +1440,32 @@ df
       <td>A</td>
     </tr>
     <tr>
-      <th>...</th>
-      <td>...</td>
-      <td>...</td>
+      <th>10</th>
+      <td>ENZO</td>
+      <td>E</td>
     </tr>
     <tr>
-      <th>13</th>
-      <td>FRANCISCO</td>
+      <th>15</th>
+      <td>GABRIEL</td>
+      <td>G</td>
+    </tr>
+    <tr>
+      <th>26</th>
+      <td>LETICIA</td>
+      <td>L</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>GUILHERME</td>
+      <td>G</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>FELIPE</td>
       <td>F</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>CAROLINA</td>
-      <td>C</td>
-    </tr>
-    <tr>
-      <th>28</th>
-      <td>LORRANY</td>
-      <td>L</td>
-    </tr>
-    <tr>
-      <th>27</th>
-      <td>LIVIA</td>
-      <td>L</td>
-    </tr>
-    <tr>
-      <th>30</th>
-      <td>LUIS</td>
-      <td>L</td>
     </tr>
   </tbody>
 </table>
-<p>40 rows × 2 columns</p>
 </div>
 
 
@@ -1043,18 +1479,47 @@ df.get('nome').apply(len)
 
 
 
-    18    9
-    23    4
-    37    6
-    7     7
-    2     6
-         ..
     13    9
-    4     8
+    14    7
+    37    6
+    35    5
+    31    5
     28    7
+    5     5
+    22    4
+    4     8
+    29    5
+    17    4
     27    5
+    3     4
+    12    6
+    24    6
+    1     6
+    39    6
+    7     7
+    21    5
+    38    9
+    20    7
+    6     8
+    0     4
+    18    9
     30    4
-    Name: nome, Length: 40, dtype: int64
+    33    6
+    34    7
+    36    6
+    16    9
+    23    4
+    9     7
+    25    7
+    8     7
+    32    6
+    2     6
+    10    4
+    15    7
+    26    7
+    19    9
+    11    6
+    Name: nome, dtype: int64
 
 
 

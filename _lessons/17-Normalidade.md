@@ -25,7 +25,7 @@ Material Adaptado do [DSC10 (UCSD)](https://dsc10.com/)
 ```python
 #In: 
 import numpy as np
-import babypandas as bpd
+import pandas as pd
 import pandas as pd
 import matplotlib.pyplot as plt
 plt.style.use('ggplot')
@@ -107,7 +107,7 @@ Para exemplificar, comecemos com um conjunto de dados com as alturas e pesos de 
 
 ```python
 #In: 
-height_and_weight = bpd.read_csv('https://raw.githubusercontent.com/flaviovdf/fcd/master/assets/17-Normalidade/data/height_and_weight.csv')
+height_and_weight = pd.read_csv('https://raw.githubusercontent.com/flaviovdf/fcd/master/assets/17-Normalidade/data/height_and_weight.csv')
 height_and_weight
 ```
 
@@ -2771,7 +2771,7 @@ Agora que padronizamos as distribuições dos pesos e das alturas, vamos ver mai
 
 ```python
 #In: 
-standardized_height_and_weight = bpd.DataFrame().assign(
+standardized_height_and_weight = pd.DataFrame().assign(
     Height=standardized_height,
     Weight=standardized_weight
 )
@@ -3291,7 +3291,7 @@ Considere mais uma vez a distribuição dos atrasos de vôos das aulas passadas.
 
 ```python
 #In: 
-delays = bpd.read_csv('https://raw.githubusercontent.com/flaviovdf/fcd/master/assets/17-Normalidade/data/united_summer2015.csv')
+delays = pd.read_csv('https://raw.githubusercontent.com/flaviovdf/fcd/master/assets/17-Normalidade/data/united_summer2015.csv')
 delays.plot(kind='hist', y='Delay', bins=np.arange(-20.5, 210, 5), density=True, ec='w', figsize=(10, 5))
 plt.title('Atrasos de Vôos')
 plt.xlabel('Atrasos (em minutos)')

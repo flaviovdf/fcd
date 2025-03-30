@@ -25,7 +25,7 @@ Material Adaptado do [DSC10 (UCSD)](https://dsc10.com/)
 ```python
 #In: 
 import numpy as np
-import babypandas as bpd
+import pandas as pd
 import pandas as pd
 ```
 
@@ -34,13 +34,13 @@ import pandas as pd
 
 ```python
 #In: 
-telefones = bpd.DataFrame().assign(
+telefones = pd.DataFrame().assign(
     Modelo=['iPhone 13', 'iPhone 13 Pro Max', 'Samsung Galaxy Z Flip', 'Pixel 5a'],
     Preco=[799, 1099, 999, 449],
     Tela=[6.1, 6.7, 6.7, 6.3]
 )
 
-unidades = bpd.DataFrame().assign(
+unidades = pd.DataFrame().assign(
     Celular=['iPhone 13 Pro Max', 'iPhone 13', 'Pixel 5a', 'iPhone 13'],
     Unidades=[50, 40, 10, 100],
     Shopping=['Del Rey', 'Savassi', 'Diamond', 'Cidade']
@@ -386,21 +386,21 @@ unidades.merge(telefones, left_on='Celular', right_on='Modelo')
     </tr>
     <tr>
       <th>2</th>
-      <td>iPhone 13</td>
-      <td>100</td>
-      <td>Cidade</td>
-      <td>iPhone 13</td>
-      <td>799</td>
-      <td>6.1</td>
-    </tr>
-    <tr>
-      <th>3</th>
       <td>Pixel 5a</td>
       <td>10</td>
       <td>Diamond</td>
       <td>Pixel 5a</td>
       <td>449</td>
       <td>6.3</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>iPhone 13</td>
+      <td>100</td>
+      <td>Cidade</td>
+      <td>iPhone 13</td>
+      <td>799</td>
+      <td>6.1</td>
     </tr>
   </tbody>
 </table>
@@ -623,14 +623,14 @@ telefones.merge(
 
 ```python
 #In: 
-nice_weather_cities = bpd.DataFrame().assign(
+nice_weather_cities = pd.DataFrame().assign(
     city=['La Jolla', 'San Diego', 'Austin', 'Los Angeles'],
     state=['California', 'California', 'Texas', 'California'],
     today_high_temp=['79', '83', '87', '87']
     
 )
 
-schools = bpd.DataFrame().assign(
+schools = pd.DataFrame().assign(
     name=['UCSD', 'University of Chicago', 'University of San Diego','Johns Hopkins University', 'UT Austin', 'SDSU', 'UCLA'], 
     city=['La Jolla', 'Chicago', 'San Diego', 'Baltimore', 'Austin', 'San Diego', 'Los Angeles'],
     state=['California', 'Illinois', 'California', 'Maryland', 'Texas', 'California', 'California'],
@@ -886,16 +886,43 @@ nice_weather_cities.merge(schools, on='state')
       <td>0.87</td>
     </tr>
     <tr>
-      <th>...</th>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
+      <th>5</th>
+      <td>San Diego</td>
+      <td>California</td>
+      <td>83</td>
+      <td>University of San Diego</td>
+      <td>San Diego</td>
+      <td>0.78</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>San Diego</td>
+      <td>California</td>
+      <td>83</td>
+      <td>SDSU</td>
+      <td>San Diego</td>
+      <td>0.83</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>San Diego</td>
+      <td>California</td>
+      <td>83</td>
+      <td>UCLA</td>
+      <td>Los Angeles</td>
+      <td>0.91</td>
     </tr>
     <tr>
       <th>8</th>
+      <td>Austin</td>
+      <td>Texas</td>
+      <td>87</td>
+      <td>UT Austin</td>
+      <td>Austin</td>
+      <td>0.81</td>
+    </tr>
+    <tr>
+      <th>9</th>
       <td>Los Angeles</td>
       <td>California</td>
       <td>87</td>
@@ -904,7 +931,7 @@ nice_weather_cities.merge(schools, on='state')
       <td>0.87</td>
     </tr>
     <tr>
-      <th>9</th>
+      <th>10</th>
       <td>Los Angeles</td>
       <td>California</td>
       <td>87</td>
@@ -913,7 +940,7 @@ nice_weather_cities.merge(schools, on='state')
       <td>0.78</td>
     </tr>
     <tr>
-      <th>10</th>
+      <th>11</th>
       <td>Los Angeles</td>
       <td>California</td>
       <td>87</td>
@@ -922,7 +949,7 @@ nice_weather_cities.merge(schools, on='state')
       <td>0.83</td>
     </tr>
     <tr>
-      <th>11</th>
+      <th>12</th>
       <td>Los Angeles</td>
       <td>California</td>
       <td>87</td>
@@ -930,18 +957,8 @@ nice_weather_cities.merge(schools, on='state')
       <td>Los Angeles</td>
       <td>0.91</td>
     </tr>
-    <tr>
-      <th>12</th>
-      <td>Austin</td>
-      <td>Texas</td>
-      <td>87</td>
-      <td>UT Austin</td>
-      <td>Austin</td>
-      <td>0.81</td>
-    </tr>
   </tbody>
 </table>
-<p>13 rows × 6 columns</p>
 </div>
 
 

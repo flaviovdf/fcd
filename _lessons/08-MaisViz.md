@@ -24,7 +24,7 @@ Material Adaptado do [DSC10 (UCSD)](https://dsc10.com/)
 ```python
 #In: 
 import numpy as np
-import babypandas as bpd
+import pandas as pd
 import matplotlib.pyplot as plt
 plt.style.use('ggplot')
 ```
@@ -73,7 +73,7 @@ A distribuição de uma variável categórica pode ser exibida como uma tabela o
 
 ```python
 #In: 
-tipo_medio = bpd.DataFrame().assign(
+tipo_medio = pd.DataFrame().assign(
     TipoEscola=['Privado', 'Público (Estadual)', 'Público (Municipal)', 'Público (Federal)'], 
     NumDiscentes=[15, 8, 3, 7]
 )
@@ -163,7 +163,7 @@ A distribuição de uma variável numérica nem sempre pode ser representada com
 
 ```python
 #In: 
-charts = bpd.read_csv('https://raw.githubusercontent.com/flaviovdf/fcd/master/assets/07-DataViz/data/regional-us-daily-2023-01-21.csv')
+charts = pd.read_csv('https://raw.githubusercontent.com/flaviovdf/fcd/master/assets/07-DataViz/data/regional-us-daily-2023-01-21.csv')
 charts = (charts.set_index('rank')
           .assign(million_streams = np.round(charts.get('streams')/1000000, 2))
           .get(['track_name', 'artist_names', 'streams', 'million_streams'])
@@ -211,35 +211,35 @@ charts
       <td>Flowers</td>
       <td>Miley Cyrus</td>
       <td>3356361</td>
-      <td>3.36</td>
+      <td>2.48</td>
     </tr>
     <tr>
       <th>2</th>
       <td>Kill Bill</td>
       <td>SZA</td>
       <td>2479445</td>
-      <td>2.48</td>
+      <td>1.34</td>
     </tr>
     <tr>
       <th>3</th>
       <td>Creepin' (with The Weeknd &amp; 21 Savage)</td>
       <td>Metro Boomin, The Weeknd, 21 Savage</td>
       <td>1337320</td>
-      <td>1.34</td>
+      <td>1.24</td>
     </tr>
     <tr>
       <th>4</th>
       <td>Superhero (Heroes &amp; Villains) [with Future &amp; C...</td>
       <td>Metro Boomin, Future, Chris Brown</td>
       <td>1235285</td>
-      <td>1.24</td>
+      <td>1.11</td>
     </tr>
     <tr>
       <th>5</th>
       <td>Rich Flex</td>
       <td>Drake, 21 Savage</td>
       <td>1109704</td>
-      <td>1.11</td>
+      <td>1.05</td>
     </tr>
     <tr>
       <th>...</th>
@@ -281,7 +281,7 @@ charts
       <td>The Real Slim Shady</td>
       <td>Eminem</td>
       <td>266698</td>
-      <td>0.27</td>
+      <td>NaN</td>
     </tr>
   </tbody>
 </table>
@@ -350,8 +350,168 @@ stream_counts
       <td>14</td>
     </tr>
     <tr>
-      <th>...</th>
-      <td>...</td>
+      <th>0.32</th>
+      <td>7</td>
+    </tr>
+    <tr>
+      <th>0.33</th>
+      <td>14</td>
+    </tr>
+    <tr>
+      <th>0.34</th>
+      <td>7</td>
+    </tr>
+    <tr>
+      <th>0.35</th>
+      <td>10</td>
+    </tr>
+    <tr>
+      <th>0.36</th>
+      <td>8</td>
+    </tr>
+    <tr>
+      <th>0.37</th>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>0.38</th>
+      <td>7</td>
+    </tr>
+    <tr>
+      <th>0.39</th>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>0.40</th>
+      <td>5</td>
+    </tr>
+    <tr>
+      <th>0.41</th>
+      <td>3</td>
+    </tr>
+    <tr>
+      <th>0.42</th>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>0.43</th>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>0.44</th>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>0.45</th>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>0.46</th>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>0.47</th>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>0.48</th>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>0.49</th>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>0.50</th>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>0.52</th>
+      <td>5</td>
+    </tr>
+    <tr>
+      <th>0.53</th>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>0.54</th>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>0.55</th>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>0.56</th>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>0.57</th>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>0.58</th>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>0.61</th>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>0.64</th>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>0.66</th>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>0.67</th>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>0.69</th>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>0.74</th>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>0.75</th>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>0.76</th>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>0.79</th>
+      <td>5</td>
+    </tr>
+    <tr>
+      <th>0.83</th>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>0.86</th>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>0.87</th>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>0.94</th>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>1.00</th>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>1.05</th>
+      <td>1</td>
     </tr>
     <tr>
       <th>1.11</th>
@@ -369,13 +529,8 @@ stream_counts
       <th>2.48</th>
       <td>1</td>
     </tr>
-    <tr>
-      <th>3.36</th>
-      <td>1</td>
-    </tr>
   </tbody>
 </table>
-<p>51 rows × 1 columns</p>
 </div>
 
 
@@ -665,7 +820,7 @@ Os dados para ambas as cidades vêm de [macrotrends.net](https://www.macrotrends
 
 ```python
 #In: 
-population = bpd.read_csv('https://raw.githubusercontent.com/flaviovdf/fcd/master/assets/08-MaisViz/data/sd-sj-2022.csv').set_index('date')
+population = pd.read_csv('https://raw.githubusercontent.com/flaviovdf/fcd/master/assets/08-MaisViz/data/sd-sj-2022.csv').set_index('date')
 population
 ```
 
@@ -740,11 +895,312 @@ population
       <td>1.88</td>
     </tr>
     <tr>
-      <th>...</th>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
+      <th>1975</th>
+      <td>1442000</td>
+      <td>3.59</td>
+      <td>1103000</td>
+      <td>1.75</td>
+    </tr>
+    <tr>
+      <th>1976</th>
+      <td>1493000</td>
+      <td>3.54</td>
+      <td>1123000</td>
+      <td>1.81</td>
+    </tr>
+    <tr>
+      <th>1977</th>
+      <td>1547000</td>
+      <td>3.62</td>
+      <td>1143000</td>
+      <td>1.78</td>
+    </tr>
+    <tr>
+      <th>1978</th>
+      <td>1602000</td>
+      <td>3.56</td>
+      <td>1163000</td>
+      <td>1.75</td>
+    </tr>
+    <tr>
+      <th>1979</th>
+      <td>1660000</td>
+      <td>3.62</td>
+      <td>1184000</td>
+      <td>1.81</td>
+    </tr>
+    <tr>
+      <th>1980</th>
+      <td>1718000</td>
+      <td>3.49</td>
+      <td>1204000</td>
+      <td>1.69</td>
+    </tr>
+    <tr>
+      <th>1981</th>
+      <td>1774000</td>
+      <td>3.26</td>
+      <td>1221000</td>
+      <td>1.41</td>
+    </tr>
+    <tr>
+      <th>1982</th>
+      <td>1832000</td>
+      <td>3.27</td>
+      <td>1237000</td>
+      <td>1.31</td>
+    </tr>
+    <tr>
+      <th>1983</th>
+      <td>1891000</td>
+      <td>3.22</td>
+      <td>1254000</td>
+      <td>1.37</td>
+    </tr>
+    <tr>
+      <th>1984</th>
+      <td>1953000</td>
+      <td>3.28</td>
+      <td>1271000</td>
+      <td>1.36</td>
+    </tr>
+    <tr>
+      <th>1985</th>
+      <td>2017000</td>
+      <td>3.28</td>
+      <td>1288000</td>
+      <td>1.34</td>
+    </tr>
+    <tr>
+      <th>1986</th>
+      <td>2082000</td>
+      <td>3.22</td>
+      <td>1305000</td>
+      <td>1.32</td>
+    </tr>
+    <tr>
+      <th>1987</th>
+      <td>2150000</td>
+      <td>3.27</td>
+      <td>1323000</td>
+      <td>1.38</td>
+    </tr>
+    <tr>
+      <th>1988</th>
+      <td>2220000</td>
+      <td>3.26</td>
+      <td>1341000</td>
+      <td>1.36</td>
+    </tr>
+    <tr>
+      <th>1989</th>
+      <td>2293000</td>
+      <td>3.29</td>
+      <td>1359000</td>
+      <td>1.34</td>
+    </tr>
+    <tr>
+      <th>1990</th>
+      <td>2356000</td>
+      <td>2.75</td>
+      <td>1376000</td>
+      <td>1.25</td>
+    </tr>
+    <tr>
+      <th>1991</th>
+      <td>2387000</td>
+      <td>1.32</td>
+      <td>1392000</td>
+      <td>1.16</td>
+    </tr>
+    <tr>
+      <th>1992</th>
+      <td>2418000</td>
+      <td>1.30</td>
+      <td>1408000</td>
+      <td>1.15</td>
+    </tr>
+    <tr>
+      <th>1993</th>
+      <td>2450000</td>
+      <td>1.32</td>
+      <td>1424000</td>
+      <td>1.14</td>
+    </tr>
+    <tr>
+      <th>1994</th>
+      <td>2482000</td>
+      <td>1.31</td>
+      <td>1441000</td>
+      <td>1.19</td>
+    </tr>
+    <tr>
+      <th>1995</th>
+      <td>2514000</td>
+      <td>1.29</td>
+      <td>1457000</td>
+      <td>1.11</td>
+    </tr>
+    <tr>
+      <th>1996</th>
+      <td>2547000</td>
+      <td>1.31</td>
+      <td>1474000</td>
+      <td>1.17</td>
+    </tr>
+    <tr>
+      <th>1997</th>
+      <td>2580000</td>
+      <td>1.30</td>
+      <td>1491000</td>
+      <td>1.15</td>
+    </tr>
+    <tr>
+      <th>1998</th>
+      <td>2614000</td>
+      <td>1.32</td>
+      <td>1508000</td>
+      <td>1.14</td>
+    </tr>
+    <tr>
+      <th>1999</th>
+      <td>2648000</td>
+      <td>1.30</td>
+      <td>1525000</td>
+      <td>1.13</td>
+    </tr>
+    <tr>
+      <th>2000</th>
+      <td>2681000</td>
+      <td>1.25</td>
+      <td>1541000</td>
+      <td>1.05</td>
+    </tr>
+    <tr>
+      <th>2001</th>
+      <td>2708000</td>
+      <td>1.01</td>
+      <td>1554000</td>
+      <td>0.84</td>
+    </tr>
+    <tr>
+      <th>2002</th>
+      <td>2735000</td>
+      <td>1.00</td>
+      <td>1566000</td>
+      <td>0.77</td>
+    </tr>
+    <tr>
+      <th>2003</th>
+      <td>2763000</td>
+      <td>1.02</td>
+      <td>1578000</td>
+      <td>0.77</td>
+    </tr>
+    <tr>
+      <th>2004</th>
+      <td>2791000</td>
+      <td>1.01</td>
+      <td>1591000</td>
+      <td>0.82</td>
+    </tr>
+    <tr>
+      <th>2005</th>
+      <td>2819000</td>
+      <td>1.00</td>
+      <td>1603000</td>
+      <td>0.75</td>
+    </tr>
+    <tr>
+      <th>2006</th>
+      <td>2848000</td>
+      <td>1.03</td>
+      <td>1616000</td>
+      <td>0.81</td>
+    </tr>
+    <tr>
+      <th>2007</th>
+      <td>2876000</td>
+      <td>0.98</td>
+      <td>1629000</td>
+      <td>0.80</td>
+    </tr>
+    <tr>
+      <th>2008</th>
+      <td>2905000</td>
+      <td>1.01</td>
+      <td>1642000</td>
+      <td>0.80</td>
+    </tr>
+    <tr>
+      <th>2009</th>
+      <td>2935000</td>
+      <td>1.03</td>
+      <td>1655000</td>
+      <td>0.79</td>
+    </tr>
+    <tr>
+      <th>2010</th>
+      <td>2964000</td>
+      <td>0.99</td>
+      <td>1668000</td>
+      <td>0.79</td>
+    </tr>
+    <tr>
+      <th>2011</th>
+      <td>2994000</td>
+      <td>1.01</td>
+      <td>1681000</td>
+      <td>0.78</td>
+    </tr>
+    <tr>
+      <th>2012</th>
+      <td>3024000</td>
+      <td>1.00</td>
+      <td>1694000</td>
+      <td>0.77</td>
+    </tr>
+    <tr>
+      <th>2013</th>
+      <td>3055000</td>
+      <td>1.03</td>
+      <td>1708000</td>
+      <td>0.83</td>
+    </tr>
+    <tr>
+      <th>2014</th>
+      <td>3086000</td>
+      <td>1.01</td>
+      <td>1721000</td>
+      <td>0.76</td>
+    </tr>
+    <tr>
+      <th>2015</th>
+      <td>3117000</td>
+      <td>1.00</td>
+      <td>1735000</td>
+      <td>0.81</td>
+    </tr>
+    <tr>
+      <th>2016</th>
+      <td>3148000</td>
+      <td>0.99</td>
+      <td>1749000</td>
+      <td>0.81</td>
+    </tr>
+    <tr>
+      <th>2017</th>
+      <td>3180000</td>
+      <td>1.02</td>
+      <td>1762000</td>
+      <td>0.74</td>
+    </tr>
+    <tr>
+      <th>2018</th>
+      <td>3212000</td>
+      <td>1.01</td>
+      <td>1776000</td>
+      <td>0.79</td>
     </tr>
     <tr>
       <th>2019</th>
@@ -783,7 +1239,6 @@ population
     </tr>
   </tbody>
 </table>
-<p>54 rows × 4 columns</p>
 </div>
 
 
@@ -905,9 +1360,224 @@ growths
       <td>1.88</td>
     </tr>
     <tr>
-      <th>...</th>
-      <td>...</td>
-      <td>...</td>
+      <th>1975</th>
+      <td>3.59</td>
+      <td>1.75</td>
+    </tr>
+    <tr>
+      <th>1976</th>
+      <td>3.54</td>
+      <td>1.81</td>
+    </tr>
+    <tr>
+      <th>1977</th>
+      <td>3.62</td>
+      <td>1.78</td>
+    </tr>
+    <tr>
+      <th>1978</th>
+      <td>3.56</td>
+      <td>1.75</td>
+    </tr>
+    <tr>
+      <th>1979</th>
+      <td>3.62</td>
+      <td>1.81</td>
+    </tr>
+    <tr>
+      <th>1980</th>
+      <td>3.49</td>
+      <td>1.69</td>
+    </tr>
+    <tr>
+      <th>1981</th>
+      <td>3.26</td>
+      <td>1.41</td>
+    </tr>
+    <tr>
+      <th>1982</th>
+      <td>3.27</td>
+      <td>1.31</td>
+    </tr>
+    <tr>
+      <th>1983</th>
+      <td>3.22</td>
+      <td>1.37</td>
+    </tr>
+    <tr>
+      <th>1984</th>
+      <td>3.28</td>
+      <td>1.36</td>
+    </tr>
+    <tr>
+      <th>1985</th>
+      <td>3.28</td>
+      <td>1.34</td>
+    </tr>
+    <tr>
+      <th>1986</th>
+      <td>3.22</td>
+      <td>1.32</td>
+    </tr>
+    <tr>
+      <th>1987</th>
+      <td>3.27</td>
+      <td>1.38</td>
+    </tr>
+    <tr>
+      <th>1988</th>
+      <td>3.26</td>
+      <td>1.36</td>
+    </tr>
+    <tr>
+      <th>1989</th>
+      <td>3.29</td>
+      <td>1.34</td>
+    </tr>
+    <tr>
+      <th>1990</th>
+      <td>2.75</td>
+      <td>1.25</td>
+    </tr>
+    <tr>
+      <th>1991</th>
+      <td>1.32</td>
+      <td>1.16</td>
+    </tr>
+    <tr>
+      <th>1992</th>
+      <td>1.30</td>
+      <td>1.15</td>
+    </tr>
+    <tr>
+      <th>1993</th>
+      <td>1.32</td>
+      <td>1.14</td>
+    </tr>
+    <tr>
+      <th>1994</th>
+      <td>1.31</td>
+      <td>1.19</td>
+    </tr>
+    <tr>
+      <th>1995</th>
+      <td>1.29</td>
+      <td>1.11</td>
+    </tr>
+    <tr>
+      <th>1996</th>
+      <td>1.31</td>
+      <td>1.17</td>
+    </tr>
+    <tr>
+      <th>1997</th>
+      <td>1.30</td>
+      <td>1.15</td>
+    </tr>
+    <tr>
+      <th>1998</th>
+      <td>1.32</td>
+      <td>1.14</td>
+    </tr>
+    <tr>
+      <th>1999</th>
+      <td>1.30</td>
+      <td>1.13</td>
+    </tr>
+    <tr>
+      <th>2000</th>
+      <td>1.25</td>
+      <td>1.05</td>
+    </tr>
+    <tr>
+      <th>2001</th>
+      <td>1.01</td>
+      <td>0.84</td>
+    </tr>
+    <tr>
+      <th>2002</th>
+      <td>1.00</td>
+      <td>0.77</td>
+    </tr>
+    <tr>
+      <th>2003</th>
+      <td>1.02</td>
+      <td>0.77</td>
+    </tr>
+    <tr>
+      <th>2004</th>
+      <td>1.01</td>
+      <td>0.82</td>
+    </tr>
+    <tr>
+      <th>2005</th>
+      <td>1.00</td>
+      <td>0.75</td>
+    </tr>
+    <tr>
+      <th>2006</th>
+      <td>1.03</td>
+      <td>0.81</td>
+    </tr>
+    <tr>
+      <th>2007</th>
+      <td>0.98</td>
+      <td>0.80</td>
+    </tr>
+    <tr>
+      <th>2008</th>
+      <td>1.01</td>
+      <td>0.80</td>
+    </tr>
+    <tr>
+      <th>2009</th>
+      <td>1.03</td>
+      <td>0.79</td>
+    </tr>
+    <tr>
+      <th>2010</th>
+      <td>0.99</td>
+      <td>0.79</td>
+    </tr>
+    <tr>
+      <th>2011</th>
+      <td>1.01</td>
+      <td>0.78</td>
+    </tr>
+    <tr>
+      <th>2012</th>
+      <td>1.00</td>
+      <td>0.77</td>
+    </tr>
+    <tr>
+      <th>2013</th>
+      <td>1.03</td>
+      <td>0.83</td>
+    </tr>
+    <tr>
+      <th>2014</th>
+      <td>1.01</td>
+      <td>0.76</td>
+    </tr>
+    <tr>
+      <th>2015</th>
+      <td>1.00</td>
+      <td>0.81</td>
+    </tr>
+    <tr>
+      <th>2016</th>
+      <td>0.99</td>
+      <td>0.81</td>
+    </tr>
+    <tr>
+      <th>2017</th>
+      <td>1.02</td>
+      <td>0.74</td>
+    </tr>
+    <tr>
+      <th>2018</th>
+      <td>1.01</td>
+      <td>0.79</td>
     </tr>
     <tr>
       <th>2019</th>
@@ -936,7 +1606,6 @@ growths
     </tr>
   </tbody>
 </table>
-<p>54 rows × 2 columns</p>
 </div>
 
 
@@ -972,7 +1641,7 @@ A mesma coisa funciona para `'barh'`, `'bar'` e `'hist'`, mas não para `'scatte
 
 ```python
 #In: 
-mother_child = bpd.read_csv('https://raw.githubusercontent.com/flaviovdf/fcd/master/assets/08-MaisViz/data/galton.csv').get(['mother', 'childHeight'])
+mother_child = pd.read_csv('https://raw.githubusercontent.com/flaviovdf/fcd/master/assets/08-MaisViz/data/galton.csv').get(['mother', 'childHeight'])
 mother_child
 ```
 

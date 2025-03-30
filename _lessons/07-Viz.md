@@ -33,7 +33,7 @@ Material Adaptado do [DSC10 (UCSD)](https://dsc10.com/)
 ```python
 #In: 
 import numpy as np
-import babypandas as bpd
+import pandas as pd
 
 import matplotlib.pyplot as plt
 plt.style.use('ggplot')
@@ -166,7 +166,7 @@ O tipo de visualização que criamos depende dos tipos de variáveis ​​que e
 
 ```python
 #In: 
-actors = bpd.read_csv('https://raw.githubusercontent.com/flaviovdf/fcd/master/assets/07-DataViz/data/actors.csv').set_index('Actor')
+actors = pd.read_csv('https://raw.githubusercontent.com/flaviovdf/fcd/master/assets/07-DataViz/data/actors.csv').set_index('Actor')
 actors
 ```
 
@@ -248,12 +248,324 @@ actors
       <td>623.4</td>
     </tr>
     <tr>
-      <th>...</th>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
+      <th>Eddie Murphy</th>
+      <td>3810.4</td>
+      <td>38</td>
+      <td>100.3</td>
+      <td>Shrek 2</td>
+      <td>441.2</td>
+    </tr>
+    <tr>
+      <th>Tom Cruise</th>
+      <td>3587.2</td>
+      <td>36</td>
+      <td>99.6</td>
+      <td>War of the Worlds</td>
+      <td>234.3</td>
+    </tr>
+    <tr>
+      <th>Johnny Depp</th>
+      <td>3368.6</td>
+      <td>45</td>
+      <td>74.9</td>
+      <td>Dead Man's Chest</td>
+      <td>423.3</td>
+    </tr>
+    <tr>
+      <th>Michael Caine</th>
+      <td>3351.5</td>
+      <td>58</td>
+      <td>57.8</td>
+      <td>The Dark Knight</td>
+      <td>534.9</td>
+    </tr>
+    <tr>
+      <th>Scarlett Johansson</th>
+      <td>3341.2</td>
+      <td>37</td>
+      <td>90.3</td>
+      <td>The Avengers</td>
+      <td>623.4</td>
+    </tr>
+    <tr>
+      <th>Gary Oldman</th>
+      <td>3294.0</td>
+      <td>38</td>
+      <td>86.7</td>
+      <td>The Dark Knight</td>
+      <td>534.9</td>
+    </tr>
+    <tr>
+      <th>Robin Williams</th>
+      <td>3279.3</td>
+      <td>49</td>
+      <td>66.9</td>
+      <td>Night at the Museum</td>
+      <td>250.9</td>
+    </tr>
+    <tr>
+      <th>Bruce Willis</th>
+      <td>3189.4</td>
+      <td>60</td>
+      <td>53.2</td>
+      <td>Sixth Sense</td>
+      <td>293.5</td>
+    </tr>
+    <tr>
+      <th>Stellan Skarsgard</th>
+      <td>3175.0</td>
+      <td>43</td>
+      <td>73.8</td>
+      <td>The Avengers</td>
+      <td>623.4</td>
+    </tr>
+    <tr>
+      <th>Anthony Daniels</th>
+      <td>3162.9</td>
+      <td>7</td>
+      <td>451.8</td>
+      <td>Star Wars: The Force Awakens</td>
+      <td>936.7</td>
+    </tr>
+    <tr>
+      <th>Ian McKellen</th>
+      <td>3150.4</td>
+      <td>31</td>
+      <td>101.6</td>
+      <td>Return of the King</td>
+      <td>377.8</td>
+    </tr>
+    <tr>
+      <th>Will Smith</th>
+      <td>3149.1</td>
+      <td>24</td>
+      <td>131.2</td>
+      <td>Independence Day</td>
+      <td>306.2</td>
+    </tr>
+    <tr>
+      <th>Stanley Tucci</th>
+      <td>3123.9</td>
+      <td>50</td>
+      <td>62.5</td>
+      <td>Catching Fire</td>
+      <td>424.7</td>
+    </tr>
+    <tr>
+      <th>Matt Damon</th>
+      <td>3107.3</td>
+      <td>39</td>
+      <td>79.7</td>
+      <td>The Martian</td>
+      <td>228.4</td>
+    </tr>
+    <tr>
+      <th>Robert DeNiro</th>
+      <td>3081.3</td>
+      <td>79</td>
+      <td>39.0</td>
+      <td>Meet the Fockers</td>
+      <td>279.3</td>
+    </tr>
+    <tr>
+      <th>Cameron Diaz</th>
+      <td>3031.7</td>
+      <td>34</td>
+      <td>89.2</td>
+      <td>Shrek 2</td>
+      <td>441.2</td>
+    </tr>
+    <tr>
+      <th>Liam Neeson</th>
+      <td>2942.7</td>
+      <td>63</td>
+      <td>46.7</td>
+      <td>The Phantom Menace</td>
+      <td>474.5</td>
+    </tr>
+    <tr>
+      <th>Andy Serkis</th>
+      <td>2890.6</td>
+      <td>23</td>
+      <td>125.7</td>
+      <td>Star Wars: The Force Awakens</td>
+      <td>936.7</td>
+    </tr>
+    <tr>
+      <th>Don Cheadle</th>
+      <td>2885.4</td>
+      <td>34</td>
+      <td>84.9</td>
+      <td>Avengers: Age of Ultron</td>
+      <td>459.0</td>
+    </tr>
+    <tr>
+      <th>Ben Stiller</th>
+      <td>2827.0</td>
+      <td>37</td>
+      <td>76.4</td>
+      <td>Meet the Fockers</td>
+      <td>279.3</td>
+    </tr>
+    <tr>
+      <th>Helena Bonham Carter</th>
+      <td>2822.0</td>
+      <td>36</td>
+      <td>78.4</td>
+      <td>Harry Potter / Deathly Hallows (P2)</td>
+      <td>381.0</td>
+    </tr>
+    <tr>
+      <th>Orlando Bloom</th>
+      <td>2815.8</td>
+      <td>17</td>
+      <td>165.6</td>
+      <td>Dead Man's Chest</td>
+      <td>423.3</td>
+    </tr>
+    <tr>
+      <th>Woody Harrelson</th>
+      <td>2815.8</td>
+      <td>50</td>
+      <td>56.3</td>
+      <td>Catching Fire</td>
+      <td>424.7</td>
+    </tr>
+    <tr>
+      <th>Cate Blanchett</th>
+      <td>2802.6</td>
+      <td>39</td>
+      <td>71.9</td>
+      <td>Return of the King</td>
+      <td>377.8</td>
+    </tr>
+    <tr>
+      <th>Julia Roberts</th>
+      <td>2735.3</td>
+      <td>42</td>
+      <td>65.1</td>
+      <td>Ocean's Eleven</td>
+      <td>183.4</td>
+    </tr>
+    <tr>
+      <th>Elizabeth Banks</th>
+      <td>2726.3</td>
+      <td>35</td>
+      <td>77.9</td>
+      <td>Catching Fire</td>
+      <td>424.7</td>
+    </tr>
+    <tr>
+      <th>Ralph Fiennes</th>
+      <td>2715.3</td>
+      <td>36</td>
+      <td>75.4</td>
+      <td>Harry Potter / Deathly Hallows (P2)</td>
+      <td>381.0</td>
+    </tr>
+    <tr>
+      <th>Emma Watson</th>
+      <td>2681.9</td>
+      <td>17</td>
+      <td>157.8</td>
+      <td>Harry Potter / Deathly Hallows (P2)</td>
+      <td>381.0</td>
+    </tr>
+    <tr>
+      <th>Tommy Lee Jones</th>
+      <td>2681.3</td>
+      <td>46</td>
+      <td>58.3</td>
+      <td>Men in Black</td>
+      <td>250.7</td>
+    </tr>
+    <tr>
+      <th>Brad Pitt</th>
+      <td>2680.9</td>
+      <td>40</td>
+      <td>67.0</td>
+      <td>World War Z</td>
+      <td>202.4</td>
+    </tr>
+    <tr>
+      <th>Adam Sandler</th>
+      <td>2661.0</td>
+      <td>32</td>
+      <td>83.2</td>
+      <td>Hotel Transylvania 2</td>
+      <td>169.7</td>
+    </tr>
+    <tr>
+      <th>Daniel Radcliffe</th>
+      <td>2634.4</td>
+      <td>17</td>
+      <td>155.0</td>
+      <td>Harry Potter / Deathly Hallows (P2)</td>
+      <td>381.0</td>
+    </tr>
+    <tr>
+      <th>Jonah Hill</th>
+      <td>2605.1</td>
+      <td>29</td>
+      <td>89.8</td>
+      <td>The LEGO Movie</td>
+      <td>257.8</td>
+    </tr>
+    <tr>
+      <th>Owen Wilson</th>
+      <td>2602.3</td>
+      <td>39</td>
+      <td>66.7</td>
+      <td>Night at the Museum</td>
+      <td>250.9</td>
+    </tr>
+    <tr>
+      <th>Idris Elba</th>
+      <td>2580.6</td>
+      <td>26</td>
+      <td>99.3</td>
+      <td>Avengers: Age of Ultron</td>
+      <td>459.0</td>
+    </tr>
+    <tr>
+      <th>Bradley Cooper</th>
+      <td>2557.7</td>
+      <td>25</td>
+      <td>102.3</td>
+      <td>American Sniper</td>
+      <td>350.1</td>
+    </tr>
+    <tr>
+      <th>Mark Wahlberg</th>
+      <td>2549.8</td>
+      <td>36</td>
+      <td>70.8</td>
+      <td>Transformers 4</td>
+      <td>245.4</td>
+    </tr>
+    <tr>
+      <th>Jim Carrey</th>
+      <td>2545.2</td>
+      <td>27</td>
+      <td>94.3</td>
+      <td>The Grinch</td>
+      <td>260.0</td>
+    </tr>
+    <tr>
+      <th>Dustin Hoffman</th>
+      <td>2522.1</td>
+      <td>43</td>
+      <td>58.7</td>
+      <td>Meet the Fockers</td>
+      <td>279.3</td>
+    </tr>
+    <tr>
+      <th>Leonardo DiCaprio</th>
+      <td>2518.3</td>
+      <td>25</td>
+      <td>100.7</td>
+      <td>Titanic</td>
+      <td>658.7</td>
     </tr>
     <tr>
       <th>Jeremy Renner</th>
@@ -297,7 +609,6 @@ actors
     </tr>
   </tbody>
 </table>
-<p>50 rows × 5 columns</p>
 </div>
 
 
@@ -520,7 +831,7 @@ actors[actors.get('Number of Movies') < 10]
 
 ```python
 #In: 
-movies_by_year = bpd.read_csv('https://raw.githubusercontent.com/flaviovdf/fcd/master/assets/07-DataViz/data/movies_by_year.csv').set_index('Year')
+movies_by_year = pd.read_csv('https://raw.githubusercontent.com/flaviovdf/fcd/master/assets/07-DataViz/data/movies_by_year.csv').set_index('Year')
 movies_by_year
 ```
 
@@ -588,10 +899,220 @@ movies_by_year
       <td>Black Panther</td>
     </tr>
     <tr>
-      <th>...</th>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
+      <th>2017</th>
+      <td>11.08</td>
+      <td>854</td>
+      <td>Star Wars: Episode VIII - The Last Jedi</td>
+    </tr>
+    <tr>
+      <th>2016</th>
+      <td>11.38</td>
+      <td>855</td>
+      <td>Finding Dory</td>
+    </tr>
+    <tr>
+      <th>2015</th>
+      <td>11.15</td>
+      <td>845</td>
+      <td>Jurassic World</td>
+    </tr>
+    <tr>
+      <th>2014</th>
+      <td>10.37</td>
+      <td>849</td>
+      <td>Guardians of the Galaxy</td>
+    </tr>
+    <tr>
+      <th>2013</th>
+      <td>10.96</td>
+      <td>826</td>
+      <td>Iron Man 3</td>
+    </tr>
+    <tr>
+      <th>2012</th>
+      <td>10.84</td>
+      <td>807</td>
+      <td>The Avengers</td>
+    </tr>
+    <tr>
+      <th>2011</th>
+      <td>10.16</td>
+      <td>731</td>
+      <td>Harry Potter and the Deathly Hallows: Part 2</td>
+    </tr>
+    <tr>
+      <th>2010</th>
+      <td>10.59</td>
+      <td>651</td>
+      <td>Avatar</td>
+    </tr>
+    <tr>
+      <th>2009</th>
+      <td>10.62</td>
+      <td>646</td>
+      <td>Transformers: Revenge of the Fallen</td>
+    </tr>
+    <tr>
+      <th>2008</th>
+      <td>9.65</td>
+      <td>725</td>
+      <td>The Dark Knight</td>
+    </tr>
+    <tr>
+      <th>2007</th>
+      <td>9.68</td>
+      <td>775</td>
+      <td>Spider-Man 3</td>
+    </tr>
+    <tr>
+      <th>2006</th>
+      <td>9.20</td>
+      <td>746</td>
+      <td>Pirates of the Caribbean: Dead Man's Chest</td>
+    </tr>
+    <tr>
+      <th>2005</th>
+      <td>8.83</td>
+      <td>676</td>
+      <td>Star Wars: Episode III - Revenge of the Sith</td>
+    </tr>
+    <tr>
+      <th>2004</th>
+      <td>9.35</td>
+      <td>700</td>
+      <td>Shrek 2</td>
+    </tr>
+    <tr>
+      <th>2003</th>
+      <td>9.23</td>
+      <td>667</td>
+      <td>Finding Nemo</td>
+    </tr>
+    <tr>
+      <th>2002</th>
+      <td>9.16</td>
+      <td>570</td>
+      <td>Spider-Man</td>
+    </tr>
+    <tr>
+      <th>2001</th>
+      <td>7.96</td>
+      <td>412</td>
+      <td>Harry Potter and the Sorcerer's Stone</td>
+    </tr>
+    <tr>
+      <th>2000</th>
+      <td>7.48</td>
+      <td>439</td>
+      <td>How the Grinch Stole Christmas</td>
+    </tr>
+    <tr>
+      <th>1999</th>
+      <td>7.34</td>
+      <td>448</td>
+      <td>Star Wars: Episode I - The Phantom Menace</td>
+    </tr>
+    <tr>
+      <th>1998</th>
+      <td>6.70</td>
+      <td>334</td>
+      <td>Titanic</td>
+    </tr>
+    <tr>
+      <th>1997</th>
+      <td>6.08</td>
+      <td>310</td>
+      <td>Men in Black</td>
+    </tr>
+    <tr>
+      <th>1996</th>
+      <td>5.60</td>
+      <td>306</td>
+      <td>Independence Day</td>
+    </tr>
+    <tr>
+      <th>1995</th>
+      <td>5.11</td>
+      <td>291</td>
+      <td>Batman Forever</td>
+    </tr>
+    <tr>
+      <th>1994</th>
+      <td>5.06</td>
+      <td>259</td>
+      <td>The Lion King</td>
+    </tr>
+    <tr>
+      <th>1993</th>
+      <td>4.82</td>
+      <td>267</td>
+      <td>Jurassic Park</td>
+    </tr>
+    <tr>
+      <th>1992</th>
+      <td>4.52</td>
+      <td>247</td>
+      <td>Batman Returns</td>
+    </tr>
+    <tr>
+      <th>1991</th>
+      <td>4.34</td>
+      <td>253</td>
+      <td>Terminator 2: Judgment Day</td>
+    </tr>
+    <tr>
+      <th>1990</th>
+      <td>4.33</td>
+      <td>236</td>
+      <td>Ghost</td>
+    </tr>
+    <tr>
+      <th>1989</th>
+      <td>4.08</td>
+      <td>235</td>
+      <td>Batman</td>
+    </tr>
+    <tr>
+      <th>1988</th>
+      <td>3.54</td>
+      <td>239</td>
+      <td>Who Framed Roger Rabbit</td>
+    </tr>
+    <tr>
+      <th>1987</th>
+      <td>3.34</td>
+      <td>226</td>
+      <td>Beverly Hills Cop II</td>
+    </tr>
+    <tr>
+      <th>1986</th>
+      <td>3.07</td>
+      <td>201</td>
+      <td>Top Gun</td>
+    </tr>
+    <tr>
+      <th>1985</th>
+      <td>3.02</td>
+      <td>191</td>
+      <td>Back to the Future</td>
+    </tr>
+    <tr>
+      <th>1984</th>
+      <td>3.07</td>
+      <td>169</td>
+      <td>Ghostbusters</td>
+    </tr>
+    <tr>
+      <th>1983</th>
+      <td>2.74</td>
+      <td>149</td>
+      <td>Star Wars: Episode VI - Return of the Jedi</td>
+    </tr>
+    <tr>
+      <th>1982</th>
+      <td>3.00</td>
+      <td>132</td>
+      <td>E.T. the Extra-Terrestrial</td>
     </tr>
     <tr>
       <th>1981</th>
@@ -625,7 +1146,6 @@ movies_by_year
     </tr>
   </tbody>
 </table>
-<p>46 rows × 3 columns</p>
 </div>
 
 
@@ -731,7 +1251,7 @@ movies_by_year[movies_by_year.index >= 2000].plot(kind='line', y='Total Gross in
 
 ```python
 #In: 
-charts = (bpd.read_csv('https://raw.githubusercontent.com/flaviovdf/fcd/master/assets/07-DataViz/data/regional-us-daily-2023-01-21.csv')
+charts = (pd.read_csv('https://raw.githubusercontent.com/flaviovdf/fcd/master/assets/07-DataViz/data/regional-us-daily-2023-01-21.csv')
           .set_index('rank')
           .get(['track_name', 'artist_names', 'streams', 'uri'])
          )
@@ -1467,13 +1987,31 @@ top_15_artists
       <td>4</td>
     </tr>
     <tr>
-      <th>...</th>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
+      <th>The Weeknd</th>
+      <td>4</td>
+      <td>4</td>
+      <td>4</td>
     </tr>
     <tr>
-      <th>Joji</th>
+      <th>Mac DeMarco</th>
+      <td>3</td>
+      <td>3</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <th>J. Cole</th>
+      <td>3</td>
+      <td>3</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <th>Steve Lacy</th>
+      <td>2</td>
+      <td>2</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>Juice WRLD</th>
       <td>2</td>
       <td>2</td>
       <td>2</td>
@@ -1491,20 +2029,25 @@ top_15_artists
       <td>2</td>
     </tr>
     <tr>
+      <th>NewJeans</th>
+      <td>2</td>
+      <td>2</td>
+      <td>2</td>
+    </tr>
+    <tr>
       <th>Childish Gambino</th>
       <td>2</td>
       <td>2</td>
       <td>2</td>
     </tr>
     <tr>
-      <th>NewJeans</th>
+      <th>Miley Cyrus</th>
       <td>2</td>
       <td>2</td>
       <td>2</td>
     </tr>
   </tbody>
 </table>
-<p>15 rows × 3 columns</p>
 </div>
 
 
@@ -1571,11 +2114,23 @@ top_15_artists
       <td>4</td>
     </tr>
     <tr>
-      <th>...</th>
-      <td>...</td>
+      <th>The Weeknd</th>
+      <td>4</td>
     </tr>
     <tr>
-      <th>Joji</th>
+      <th>Mac DeMarco</th>
+      <td>3</td>
+    </tr>
+    <tr>
+      <th>J. Cole</th>
+      <td>3</td>
+    </tr>
+    <tr>
+      <th>Steve Lacy</th>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>Juice WRLD</th>
       <td>2</td>
     </tr>
     <tr>
@@ -1587,16 +2142,19 @@ top_15_artists
       <td>2</td>
     </tr>
     <tr>
+      <th>NewJeans</th>
+      <td>2</td>
+    </tr>
+    <tr>
       <th>Childish Gambino</th>
       <td>2</td>
     </tr>
     <tr>
-      <th>NewJeans</th>
+      <th>Miley Cyrus</th>
       <td>2</td>
     </tr>
   </tbody>
 </table>
-<p>15 rows × 1 columns</p>
 </div>
 
 

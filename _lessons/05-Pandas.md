@@ -66,7 +66,7 @@ Alguns links importantes daqui para frente:
 
 ```python
 #In: 
-import babypandas as bpd
+import pandas as pd
 import numpy as np
 ```
 
@@ -79,14 +79,14 @@ import numpy as np
 
 ### Lendo dados de um arquivo 📖
 
-Podemos ler em um CSV usando `bpd.read_csv(...)`. Forneça o caminho para um arquivo relativo ao seu notebook (se o arquivo estiver na mesma pasta do seu notebook, esse é apenas o nome do arquivo).
+Podemos ler em um CSV usando `pd.read_csv(...)`. Forneça o caminho para um arquivo relativo ao seu notebook (se o arquivo estiver na mesma pasta do seu notebook, esse é apenas o nome do arquivo).
 
 
 ```python
 #In: 
 # para rodar no colab use 'https://raw.githubusercontent.com/flaviovdf/fcd/main/assets/06-GroupBy/data/afonso_pena.csv'
-# i.e., afonso_pena = bpd.read_csv('https://raw.githubusercontent.com/flaviovdf/fcd/main/assets/06-GroupBy/data/afonso_pena.csv')
-afonso_pena = bpd.read_csv('afonso_pena.csv')
+# i.e., afonso_pena = pd.read_csv('https://raw.githubusercontent.com/flaviovdf/fcd/main/assets/06-GroupBy/data/afonso_pena.csv')
+afonso_pena = pd.read_csv('afonso_pena.csv')
 ```
 
 ### Estrutura de um DataFrame
@@ -1219,15 +1219,48 @@ afonso_pena.sort_values(by='NUMERO_PRODUTOS_CADASTRADOS')
   </thead>
   <tbody>
     <tr>
-      <th>545</th>
-      <td>Y.F1.V027</td>
-      <td>BARRACA NATALICE BARBOSA DA CONCEIÇÃO</td>
-      <td>NATALICE BARBOSA DA CONCEIÇÃO</td>
-      <td>WALDIR BARBOSA DA SILVA</td>
+      <th>261</th>
+      <td>X.F2.V003</td>
+      <td>BARRACA JOÃO GERALDO MARTINS DE SOUZA</td>
+      <td>JOÃO GERALDO MARTINS DE SOUZA</td>
+      <td>CHARLES DAVIDSON ROSA MARTINS</td>
       <td>Alimentação</td>
-      <td>ACARAJÉ</td>
+      <td>CHURRASCO</td>
       <td>1.0</td>
-      <td>33.611058</td>
+      <td>33.569063</td>
+    </tr>
+    <tr>
+      <th>273</th>
+      <td>P.F1.V012</td>
+      <td>BARRACA JOSÉ ALBERTO LUCIANO</td>
+      <td>JOSÉ ALBERTO LUCIANO</td>
+      <td>EDSON APARECIDO SANCHES</td>
+      <td>Artes e Pintura</td>
+      <td>PINTURA A ÓLEO</td>
+      <td>1.0</td>
+      <td>23.790191</td>
+    </tr>
+    <tr>
+      <th>150</th>
+      <td>E.F3.V022</td>
+      <td>BARRACA ELIANA LOPES RIBEIRO</td>
+      <td>ELIANA LOPES RIBEIRO</td>
+      <td>CRISTINA LOPES RIBEIRO</td>
+      <td>Vestuário Infantil</td>
+      <td>ROUPA INFANTIL BORDADA</td>
+      <td>1.0</td>
+      <td>11.827592</td>
+    </tr>
+    <tr>
+      <th>1018</th>
+      <td>P.F2.V003</td>
+      <td>BARRACA ELIANE LEAO PIANETTI</td>
+      <td>ELIANE LEAO PIANETTI</td>
+      <td>LUIZ AUGUSTO PIANETTI FONSECA</td>
+      <td>Artes e Pintura</td>
+      <td>PINTURA A ÓLEO</td>
+      <td>1.0</td>
+      <td>23.790191</td>
     </tr>
     <tr>
       <th>1019</th>
@@ -1241,39 +1274,6 @@ afonso_pena.sort_values(by='NUMERO_PRODUTOS_CADASTRADOS')
       <td>23.790191</td>
     </tr>
     <tr>
-      <th>122</th>
-      <td>E.F4.V001</td>
-      <td>BARRACA DORA LÚCIA BATISTA  CUNHA</td>
-      <td>DORA LÚCIA BATISTA  CUNHA</td>
-      <td>CRISTINA CUNHA ESPERANCA</td>
-      <td>Vestuário Infantil</td>
-      <td>VESTIDO</td>
-      <td>1.0</td>
-      <td>11.838911</td>
-    </tr>
-    <tr>
-      <th>1331</th>
-      <td>E.F2.V024</td>
-      <td>BARRACA VALERIA JANINE VILELA RIBEIRO</td>
-      <td>VALERIA JANINE VILELA RIBEIRO</td>
-      <td>AGDA GIOVANNA VILELA</td>
-      <td>Vestuário Infantil</td>
-      <td>VESTIDO</td>
-      <td>1.0</td>
-      <td>11.827592</td>
-    </tr>
-    <tr>
-      <th>387</th>
-      <td>I.F3.V031</td>
-      <td>BARRACA MARIA ANGELICA DOS SANTOS PINTO</td>
-      <td>MARIA ANGELICA DOS SANTOS PINTO</td>
-      <td>PABLO TORQUATO SILVA</td>
-      <td>Cintos, Bolsas e Acessórios</td>
-      <td>BOLSA</td>
-      <td>1.0</td>
-      <td>11.838911</td>
-    </tr>
-    <tr>
       <th>...</th>
       <td>...</td>
       <td>...</td>
@@ -1283,17 +1283,6 @@ afonso_pena.sort_values(by='NUMERO_PRODUTOS_CADASTRADOS')
       <td>...</td>
       <td>...</td>
       <td>...</td>
-    </tr>
-    <tr>
-      <th>653</th>
-      <td>F.F1.V015</td>
-      <td>BARRACA SILVIA REGINA NOGUEIRA RIBEIRO</td>
-      <td>SILVIA REGINA NOGUEIRA RIBEIRO</td>
-      <td>LIGIA MARIA NOGUEIRA RIBEIRO</td>
-      <td>Criança</td>
-      <td>VESTIDO, BLUSA, CONJUNTO VIROL, CALÇA, COLETE,...</td>
-      <td>20.0</td>
-      <td>11.827592</td>
     </tr>
     <tr>
       <th>1406</th>
@@ -1316,6 +1305,17 @@ afonso_pena.sort_values(by='NUMERO_PRODUTOS_CADASTRADOS')
       <td>CERÂMICA VITRIFICADA, MOLDURA, VELA, CASTIÇAL,...</td>
       <td>20.0</td>
       <td>21.193242</td>
+    </tr>
+    <tr>
+      <th>653</th>
+      <td>F.F1.V015</td>
+      <td>BARRACA SILVIA REGINA NOGUEIRA RIBEIRO</td>
+      <td>SILVIA REGINA NOGUEIRA RIBEIRO</td>
+      <td>LIGIA MARIA NOGUEIRA RIBEIRO</td>
+      <td>Criança</td>
+      <td>VESTIDO, BLUSA, CONJUNTO VIROL, CALÇA, COLETE,...</td>
+      <td>20.0</td>
+      <td>11.827592</td>
     </tr>
     <tr>
       <th>491</th>
@@ -1406,17 +1406,6 @@ ordenado
   </thead>
   <tbody>
     <tr>
-      <th>109</th>
-      <td>Y.F1.V012</td>
-      <td>BARRACA DAYSE PINTO NORBERTO</td>
-      <td>DAYSE PINTO NORBERTO</td>
-      <td>DJALMA ANTÔNIO DE FREITAS</td>
-      <td>Alimentação</td>
-      <td>CERVEJA, TORRESMO, CHIPS, AZEITONA, REFRIGERAN...</td>
-      <td>21.0</td>
-      <td>33.611057</td>
-    </tr>
-    <tr>
       <th>491</th>
       <td>F.F2.V011</td>
       <td>BARRACA MARILEA IMACULADA MUNIZ COSTA</td>
@@ -1426,6 +1415,17 @@ ordenado
       <td>KIT BERÇO, CORTINADO, BONECA DE PELÚCIA, SAIA ...</td>
       <td>21.0</td>
       <td>11.827592</td>
+    </tr>
+    <tr>
+      <th>109</th>
+      <td>Y.F1.V012</td>
+      <td>BARRACA DAYSE PINTO NORBERTO</td>
+      <td>DAYSE PINTO NORBERTO</td>
+      <td>DJALMA ANTÔNIO DE FREITAS</td>
+      <td>Alimentação</td>
+      <td>CERVEJA, TORRESMO, CHIPS, AZEITONA, REFRIGERAN...</td>
+      <td>21.0</td>
+      <td>33.611057</td>
     </tr>
     <tr>
       <th>653</th>
@@ -1439,17 +1439,6 @@ ordenado
       <td>11.827592</td>
     </tr>
     <tr>
-      <th>1406</th>
-      <td>Z.F1.V007</td>
-      <td>BARRACA FRANCINERE AMARAL CARDOSO RIBEIRO DE S...</td>
-      <td>FRANCINERE AMARAL CARDOSO RIBEIRO DE SOUZA</td>
-      <td>RAYKARD AGUIAR DE JESUS</td>
-      <td>Alimentação</td>
-      <td>CERVEJA, REFRIGERANTE, SUCO INDUSTRIALIZADO, E...</td>
-      <td>20.0</td>
-      <td>33.611058</td>
-    </tr>
-    <tr>
       <th>336</th>
       <td>B.F1.V001</td>
       <td>BARRACA LUCY DOS SANTOS SEBASTIAO</td>
@@ -1459,6 +1448,17 @@ ordenado
       <td>CERÂMICA VITRIFICADA, MOLDURA, VELA, CASTIÇAL,...</td>
       <td>20.0</td>
       <td>21.193242</td>
+    </tr>
+    <tr>
+      <th>1406</th>
+      <td>Z.F1.V007</td>
+      <td>BARRACA FRANCINERE AMARAL CARDOSO RIBEIRO DE S...</td>
+      <td>FRANCINERE AMARAL CARDOSO RIBEIRO DE SOUZA</td>
+      <td>RAYKARD AGUIAR DE JESUS</td>
+      <td>Alimentação</td>
+      <td>CERVEJA, REFRIGERANTE, SUCO INDUSTRIALIZADO, E...</td>
+      <td>20.0</td>
+      <td>33.611058</td>
     </tr>
     <tr>
       <th>...</th>
@@ -1472,6 +1472,17 @@ ordenado
       <td>...</td>
     </tr>
     <tr>
+      <th>1357</th>
+      <td>I.F3.V006</td>
+      <td>BARRACA GISLAINE ASSUNÇÃO MACHADO</td>
+      <td>GISLAINE ASSUNÇÃO MACHADO</td>
+      <td>LUCIANA BARBOSA CALDEIRA</td>
+      <td>Cintos, Bolsas e Acessórios</td>
+      <td>BOLSA</td>
+      <td>1.0</td>
+      <td>11.827592</td>
+    </tr>
+    <tr>
       <th>647</th>
       <td>P.F1.V023</td>
       <td>BARRACA SÉRGIO BARBOSA DE JESUS</td>
@@ -1481,17 +1492,6 @@ ordenado
       <td>PINTURA A ÓLEO</td>
       <td>1.0</td>
       <td>23.790191</td>
-    </tr>
-    <tr>
-      <th>401</th>
-      <td>I.F1.V017</td>
-      <td>BARRACA ROSÂNGELA  APARECIDA CALDEIRA DE ALVAR...</td>
-      <td>ROSÂNGELA  APARECIDA CALDEIRA DE ALVARENGA</td>
-      <td>ELZIM JOSÉ LUIZ</td>
-      <td>Cintos, Bolsas e Acessórios</td>
-      <td>BOLSA</td>
-      <td>1.0</td>
-      <td>11.838911</td>
     </tr>
     <tr>
       <th>811</th>
@@ -1505,26 +1505,26 @@ ordenado
       <td>11.838911</td>
     </tr>
     <tr>
-      <th>1022</th>
-      <td>P.F1.V008</td>
-      <td>BARRACA IVETE EMILIA MAGALHÃES SANTOS</td>
-      <td>IVETE EMILIA MAGALHÃES SANTOS</td>
-      <td>LAZARA TEREZA RIZZO</td>
-      <td>Artes e Pintura</td>
-      <td>PINTURA A ÓLEO</td>
-      <td>1.0</td>
-      <td>23.790191</td>
-    </tr>
-    <tr>
-      <th>1170</th>
-      <td>I.F1.V034</td>
-      <td>BARRACA LUCIENE REIS VASCONCELOS</td>
-      <td>LUCIENE REIS VASCONCELOS</td>
-      <td>ELIZETE GENOVEVA DA SILVA</td>
-      <td>Cintos, Bolsas e Acessórios</td>
-      <td>BOLSA</td>
+      <th>812</th>
+      <td>B.F3.V007</td>
+      <td>BARRACA JENNER BATISTA</td>
+      <td>JENNER BATISTA</td>
+      <td>LUCIA CARLOS BATISTA</td>
+      <td>Decoração e Utilidades</td>
+      <td>EMBALAGEM DE PRESENTE</td>
       <td>1.0</td>
       <td>11.827592</td>
+    </tr>
+    <tr>
+      <th>807</th>
+      <td>C.F3.V010</td>
+      <td>BARRACA MARIA GERALDA SANTANA SILVA</td>
+      <td>MARIA GERALDA SANTANA SILVA</td>
+      <td>POLIANA FERREIRA DA SILVA</td>
+      <td>Cama, Mesa, Banho e Tapeçaria</td>
+      <td>TAPETE</td>
+      <td>1.0</td>
+      <td>11.838911</td>
     </tr>
   </tbody>
 </table>

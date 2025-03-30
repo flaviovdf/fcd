@@ -26,7 +26,7 @@ Material Adaptado do [DSC10 (UCSD)](https://dsc10.com/)
 #In: 
 # Imports for this lesson.
 import numpy as np
-import babypandas as bpd
+import pandas as pd
 import pandas as pd
 import matplotlib.pyplot as plt
 plt.style.use('ggplot')
@@ -50,7 +50,7 @@ Os salários de todos os funcionários públicos da cidade de San Diego [estão 
 
 ```python
 #In: 
-population = bpd.read_csv('https://raw.githubusercontent.com/flaviovdf/fcd/master/assets/15-Bootstrapping/data/2022_salaries.csv')
+population = pd.read_csv('https://raw.githubusercontent.com/flaviovdf/fcd/master/assets/15-Bootstrapping/data/2022_salaries.csv')
 population
 ```
 
@@ -816,7 +816,7 @@ sample_medians
 
 ```python
 #In: 
-(bpd.DataFrame()
+(pd.DataFrame()
  .assign(SampleMedians=sample_medians)
  .plot(kind='hist', density=True,
        bins=30, ec='w', figsize=(8, 5),
@@ -991,7 +991,7 @@ boot_medians
 
 ```python
 #In: 
-bpd.DataFrame().assign(BootstrapMedians=boot_medians).plot(kind='hist', density=True, bins=np.arange(63000, 88000, 1000), ec='w', figsize=(10, 5))
+pd.DataFrame().assign(BootstrapMedians=boot_medians).plot(kind='hist', density=True, bins=np.arange(63000, 88000, 1000), ec='w', figsize=(10, 5))
 plt.scatter(population_median, 0.000004, color='blue', s=100, label='population median').set_zorder(2)
 plt.legend()
 plt.ylabel("Frequência");
@@ -1033,7 +1033,7 @@ Após realizarmos um bootstrap, porém, podemos gerar uma distribuição empíri
 
 ```python
 #In: 
-(bpd.DataFrame()
+(pd.DataFrame()
  .assign(BootstrapMedians=boot_medians)
  .plot(kind='hist', density=True, bins=np.arange(63000, 88000, 1000), ec='w', figsize=(10, 5))
 )
@@ -1104,7 +1104,7 @@ Anteriormente, geramos uma distribuição boostrap da mediana amostral:
 
 ```python
 #In: 
-bpd.DataFrame().assign(BootstrapMedians=boot_medians).plot(kind='hist', density=True, bins=np.arange(63000, 88000, 1000), ec='w', figsize=(10, 5))
+pd.DataFrame().assign(BootstrapMedians=boot_medians).plot(kind='hist', density=True, bins=np.arange(63000, 88000, 1000), ec='w', figsize=(10, 5))
 plt.scatter(population_median, 0.000004, color='blue', s=100, label='population median').set_zorder(2)
 plt.legend()
 plt.ylabel("Frequência");
@@ -1209,7 +1209,7 @@ Utilizamos códigos como esse acima o **tempo todo** em Ciência de Dados!
 
 ```python
 #In: 
-bpd.DataFrame().assign(BootstrapMedians=boot_medians).plot(kind='hist', density=True, bins=np.arange(63000, 88000, 1000), ec='w', figsize=(10, 5), zorder=1)
+pd.DataFrame().assign(BootstrapMedians=boot_medians).plot(kind='hist', density=True, bins=np.arange(63000, 88000, 1000), ec='w', figsize=(10, 5), zorder=1)
 plt.plot([left, right], [0, 0], color='gold', linewidth=12, label='95% confidence interval', zorder=2);
 plt.scatter(population_median, 0.000004, color='blue', s=100, label='population median', zorder=3)
 plt.legend()

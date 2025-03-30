@@ -25,7 +25,7 @@ Material Adaptado do [DSC10 (UCSD)](https://dsc10.com/)
 
 ```python
 #In: 
-import babypandas as bpd
+import pandas as pd
 import numpy as np
 ```
 
@@ -660,15 +660,35 @@ print('Blast off! 🚀')
 
     Launching in...
     t-minus 10
+
+
     t-minus 9
+
+
     t-minus 8
+
+
     t-minus 7
+
+
     t-minus 6
+
+
     t-minus 5
+
+
     t-minus 4
+
+
     t-minus 3
+
+
     t-minus 2
+
+
     t-minus 1
+
+
     Blast off! 🚀
 
 
@@ -960,7 +980,7 @@ flip(10)
 
 
 
-    6
+    4
 
 
 
@@ -995,7 +1015,7 @@ heads_array
 
 
 
-    array([5., 4., 5., ..., 7., 5., 4.])
+    array([4., 6., 4., ..., 5., 6., 6.])
 
 
 
@@ -1015,7 +1035,7 @@ len(heads_array)
 
 ```python
 #In: 
-(bpd.DataFrame().assign(num_heads=heads_array)
+(pd.DataFrame().assign(num_heads=heads_array)
  .plot(kind='hist', density=True, bins=np.arange(0, 12), ec='w', legend=False, 
        title = 'Distribution of the number of heads in 10 coin flips')
 );

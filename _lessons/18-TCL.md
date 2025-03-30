@@ -25,7 +25,7 @@ Material Adaptado do [DSC10 (UCSD)](https://dsc10.com/)
 ```python
 #In: 
 import numpy as np
-import babypandas as bpd
+import pandas as pd
 import pandas as pd
 import matplotlib.pyplot as plt
 plt.style.use('ggplot')
@@ -81,7 +81,7 @@ def estimate_z():
 def plot_many_distributions(sample_sizes, sample_means):
     bins = np.arange(5, 30, 0.5)
     for size in sample_sizes:
-        bpd.DataFrame().assign(data=sample_means[size]).plot(kind='hist', bins=bins, density=True, ec='w', title=f'Distribution of the Sample Mean for Samples of Size {size}', figsize=(8, 4))
+        pd.DataFrame().assign(data=sample_means[size]).plot(kind='hist', bins=bins, density=True, ec='w', title=f'Distribution of the Sample Mean for Samples of Size {size}', figsize=(8, 4))
         plt.legend('');
         plt.show()
         time.sleep(1.5)
@@ -124,7 +124,7 @@ A distribuição dos atrasos de vôos que analisamos anteriormente _não é_ apr
 
 ```python
 #In: 
-delays = bpd.read_csv('https://raw.githubusercontent.com/flaviovdf/fcd/master/assets/17-Normalidade/data/united_summer2015.csv')
+delays = pd.read_csv('https://raw.githubusercontent.com/flaviovdf/fcd/master/assets/17-Normalidade/data/united_summer2015.csv')
 delays.plot(kind='hist', y='Delay', bins=np.arange(-20.5, 210, 5), density=True, ec='w', figsize=(10, 5), title='Distribuição Populacional dos Atrasos de Vôos')
 plt.xlabel('Atrasos (em minutos)')
 plt.ylabel("Frequência");
@@ -196,14 +196,14 @@ sample_means
 
 
 
-    array([21.26, 19.17, 15.21, ..., 16.27, 18.02, 19.62])
+    array([15.88, 15.42, 15.79, ..., 17.11, 16.93, 17.1 ])
 
 
 
 
 ```python
 #In: 
-bpd.DataFrame().assign(sample_means=sample_means).plot(kind='hist', density=True, ec='w', alpha=0.65, bins=20, figsize=(10, 5));
+pd.DataFrame().assign(sample_means=sample_means).plot(kind='hist', density=True, ec='w', alpha=0.65, bins=20, figsize=(10, 5));
 plt.scatter([sample_means.mean()], [-0.005], marker='^', color='green', s=250)
 plt.axvline(sample_means.mean(), color='green', label=f'mean={np.round(sample_means.mean(), 2)}', linewidth=4)
 plt.xlim(5, 30)
@@ -266,7 +266,7 @@ sample_mean_delays(sample_size)
 
 
 
-    array([17.33, 18.7 , 11.49, ..., 18.18, 13.26, 13.72])
+    array([12.93, 14.35,  7.7 , ..., 12.87, 15.69, 15.12])
 
 
 
@@ -287,14 +287,14 @@ sample_means
 
 
 
-    {5: array([ 8. , 21. , 78.8, ...,  5. , 29.4, 15.6]),
-     10: array([ 8.2,  6. , 10.1, ...,  3.6,  0.6, 23.3]),
-     50: array([12.32,  9.78, 13.34, ..., 16.68, 16.12, 19.98]),
-     100: array([20.32, 20.49, 12.64, ..., 11.72, 20.34, 19.85]),
-     200: array([14.43, 16.02, 12.81, ..., 15.14, 17.34, 19.14]),
-     400: array([18.33, 17.32, 21.48, ..., 17.84, 17.11, 11.32]),
-     800: array([14.59, 14.87, 18.21, ..., 20.02, 17.09, 16.83]),
-     1600: array([16.15, 17.7 , 16.21, ..., 16.82, 16.68, 16.44])}
+    {5: array([10.8, 11. , 38. , ..., 20.6,  7.8, 15.4]),
+     10: array([ 2.2, 10.7, 19.2, ..., 12. ,  8.8,  7.1]),
+     50: array([21.6 , 18.42, 17.66, ..., 11.26, 14.98,  8.34]),
+     100: array([20.96, 16.1 , 19.97, ..., 18.81, 11.18, 20.4 ]),
+     200: array([18.66, 16.21, 17.39, ..., 19.11, 16.32, 14.21]),
+     400: array([18.54, 17.35, 13.76, ..., 15.51, 15.56, 20.91]),
+     800: array([15.6 , 18.01, 17.2 , ..., 17.32, 14.28, 16.76]),
+     1600: array([16.62, 16.49, 16.97, ..., 17.04, 17.11, 14.73])}
 
 
 
@@ -333,14 +333,14 @@ vars
 
 
 
-    array([295.63, 147.92,  30.4 ,  15.51,   7.48,   3.95,   1.79,   0.89])
+    array([279.7 , 140.  ,  31.96,  15.54,   7.28,   4.14,   1.82,   0.85])
 
 
 
 
 ```python
 #In: 
-observed = bpd.DataFrame().assign(
+observed = pd.DataFrame().assign(
     SampleSize=sample_sizes,
     Variance=vars
 )
@@ -457,7 +457,7 @@ resample_means
 
 ```python
 #In: 
-bpd.DataFrame().assign(resample_means=resample_means).plot(kind='hist', density=True, ec='w', alpha=0.65, bins=20, figsize=(10, 5));
+pd.DataFrame().assign(resample_means=resample_means).plot(kind='hist', density=True, ec='w', alpha=0.65, bins=20, figsize=(10, 5));
 plt.scatter([resample_means.mean()], [-0.005], marker='^', color='green', s=250)
 plt.axvline(resample_means.mean(), color='green', label=f'mean={np.round(resample_means.mean(), 2)}', linewidth=4)
 plt.xlim(7, 20)
@@ -515,7 +515,7 @@ Vamos então elaborar o gráfico de uma curva Normal com média $\bar{X}$ e DP $
 #In: 
 norm_x = np.linspace(7, 20)
 norm_y = normal_curve(norm_x, mu=sample_mean_mean, sigma=sample_mean_sd)
-bpd.DataFrame().assign(Bootstrapping=resample_means).plot(kind='hist', density=True, ec='w', alpha=0.65, bins=20, figsize=(10, 5));
+pd.DataFrame().assign(Bootstrapping=resample_means).plot(kind='hist', density=True, ec='w', alpha=0.65, bins=20, figsize=(10, 5));
 plt.plot(norm_x, norm_y, color='black', linestyle='--', linewidth=4, label='CLT')
 plt.title('Distribuição da Média Amostral, via Bootstrap e TCL')
 plt.xlim(7, 20)
@@ -582,7 +582,7 @@ Visualmente:
 
 ```python
 #In: 
-bpd.DataFrame().assign(resample_means=resample_means).plot(kind='hist', y='resample_means', alpha=0.65, bins=20, density=True, ec='w', figsize=(10, 5), title='Distribuição Bootstrap da Média Amostral');
+pd.DataFrame().assign(resample_means=resample_means).plot(kind='hist', y='resample_means', alpha=0.65, bins=20, density=True, ec='w', figsize=(10, 5), title='Distribuição Bootstrap da Média Amostral');
 plt.plot([left_boot, right_boot], [0, 0], color='gold', linewidth=10, label='95% bootstrap-based confidence interval');
 plt.axvline(resample_means.mean(), color='green', label=f'sample mean={np.round(resample_means.mean(), 2)}', linewidth=4)
 plt.xlim(7, 20);

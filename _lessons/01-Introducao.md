@@ -36,7 +36,7 @@ O foco do nosso curso não é passar por cima de Programação e Desenvolvimento
 #In: 
 # Imports. Geralmente você vai apenas copiar essas linhas.
 # Não mude elas!!
-import babypandas as bpd
+import pandas as pd
 import numpy as np
 
 import matplotlib.pyplot as plt
