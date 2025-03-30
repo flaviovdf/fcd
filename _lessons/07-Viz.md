@@ -3,7 +3,7 @@ layout: page
 title: Visualização de Dados
 nav_order: 7
 ---
-[<img src="https://raw.githubusercontent.com/flaviovdf/fcd/master/assets/colab_favicon_small.png" style="float: right;">](https://colab.research.google.com/github/flaviovdf/fcd/blob/master/_lessons/06-Viz.ipynb)
+[<img src="https://raw.githubusercontent.com/flaviovdf/fcd/master/assets/colab_favicon_small.png" style="float: right;">](https://colab.research.google.com/github/flaviovdf/fcd/blob/master/_lessons/07-Viz.ipynb)
 
 # Tópico 7 – DataViz: Visualizando Dados 📈
 {: .no_toc .mb-2 }
