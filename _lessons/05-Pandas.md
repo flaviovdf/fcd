@@ -50,7 +50,7 @@ Alguns links importantes daqui para frente:
 
 ![](https://raw.githubusercontent.com/flaviovdf/fcd/master/assets/05-BabyPandas/images/angrypanda.jpg)
 
-### Digite `babypandas`!
+### Vamos nos inspirar `babypandas`!
 
 - Assim, vamos limitar um pouco as funções de pandas que utilizamos
 - Você não precisa aprender pandas avançado nesse curso!
